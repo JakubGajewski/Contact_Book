@@ -1,75 +1,60 @@
 package pl.jg.model;
 
+import java.util.Date;
+
 public class Contact {
-	String firstName;
-	String lastName;
-	String email;
-	Integer landlinePhone;
-	Integer mobilePhone;
-	String company;
-	String department;
-	String address;
-	
-	private String getFirstName() {
+	private Integer id;
+	private String firstName;
+	private String lastName;
+	private String email;
+	private String phoneNumber;
+	private Date birthDate;
+	public Integer getId() {
+		return id;
+	}
+	public void setId(Integer id) {
+		this.id = id;
+	}
+	public String getFirstName() {
 		return firstName;
 	}
-	private void setFirstName(String firstName) {
+	public void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}
-	private String getLastName() {
+	public String getLastName() {
 		return lastName;
 	}
-	private void setLastName(String lastName) {
+	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
-	private String getEmail() {
+	public String getEmail() {
 		return email;
 	}
-	private void setEmail(String email) {
+	public void setEmail(String email) {
 		this.email = email;
 	}
-	private Integer getLandlinePhone() {
-		return landlinePhone;
+	public String getPhoneNumber() {
+		return phoneNumber;
 	}
-	private void setLandlinePhone(Integer landlinePhone) {
-		this.landlinePhone = landlinePhone;
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
 	}
-	private Integer getMobilePhone() {
-		return mobilePhone;
+	public Date getBirthDate() {
+		return birthDate;
 	}
-	private void setMobilePhone(Integer mobilePhone) {
-		this.mobilePhone = mobilePhone;
-	}
-	private String getCompany() {
-		return company;
-	}
-	private void setCompany(String company) {
-		this.company = company;
-	}
-	private String getDepartment() {
-		return department;
-	}
-	private void setDepartment(String department) {
-		this.department = department;
-	}
-	private String getAddress() {
-		return address;
-	}
-	private void setAddress(String address) {
-		this.address = address;
+	public void setBirthDate(Date birthDate) {
+		this.birthDate = birthDate;
 	}
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((address == null) ? 0 : address.hashCode());
-		result = prime * result + ((company == null) ? 0 : company.hashCode());
-		result = prime * result + ((department == null) ? 0 : department.hashCode());
+		result = prime * result + ((birthDate == null) ? 0 : birthDate.hashCode());
 		result = prime * result + ((email == null) ? 0 : email.hashCode());
 		result = prime * result + ((firstName == null) ? 0 : firstName.hashCode());
-		result = prime * result + ((landlinePhone == null) ? 0 : landlinePhone.hashCode());
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + ((lastName == null) ? 0 : lastName.hashCode());
-		result = prime * result + ((mobilePhone == null) ? 0 : mobilePhone.hashCode());
+		result = prime * result + ((phoneNumber == null) ? 0 : phoneNumber.hashCode());
 		return result;
 	}
 	@Override
@@ -81,20 +66,10 @@ public class Contact {
 		if (getClass() != obj.getClass())
 			return false;
 		Contact other = (Contact) obj;
-		if (address == null) {
-			if (other.address != null)
+		if (birthDate == null) {
+			if (other.birthDate != null)
 				return false;
-		} else if (!address.equals(other.address))
-			return false;
-		if (company == null) {
-			if (other.company != null)
-				return false;
-		} else if (!company.equals(other.company))
-			return false;
-		if (department == null) {
-			if (other.department != null)
-				return false;
-		} else if (!department.equals(other.department))
+		} else if (!birthDate.equals(other.birthDate))
 			return false;
 		if (email == null) {
 			if (other.email != null)
@@ -106,31 +81,26 @@ public class Contact {
 				return false;
 		} else if (!firstName.equals(other.firstName))
 			return false;
-		if (landlinePhone == null) {
-			if (other.landlinePhone != null)
+		if (id == null) {
+			if (other.id != null)
 				return false;
-		} else if (!landlinePhone.equals(other.landlinePhone))
+		} else if (!id.equals(other.id))
 			return false;
 		if (lastName == null) {
 			if (other.lastName != null)
 				return false;
 		} else if (!lastName.equals(other.lastName))
 			return false;
-		if (mobilePhone == null) {
-			if (other.mobilePhone != null)
+		if (phoneNumber == null) {
+			if (other.phoneNumber != null)
 				return false;
-		} else if (!mobilePhone.equals(other.mobilePhone))
+		} else if (!phoneNumber.equals(other.phoneNumber))
 			return false;
 		return true;
 	}
 	@Override
 	public String toString() {
-		return "Contact [firstName=" + firstName + ", lastName=" + lastName + ", email=" + email + ", landlinePhone="
-				+ landlinePhone + ", mobilePhone=" + mobilePhone + ", company=" + company + ", department=" + department
-				+ ", address=" + address + "]";
+		return "Contact [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email
+				+ ", phoneNumber=" + phoneNumber + ", birthDate=" + birthDate + "]";
 	}
-	
-	
-	
-	
 }

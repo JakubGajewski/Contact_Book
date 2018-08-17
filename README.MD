@@ -8,5 +8,6 @@ Tools:
 - Eclipse IDE
 
 Design patterns:
+- Preaction Pattern
 - MVC
 - DAO
